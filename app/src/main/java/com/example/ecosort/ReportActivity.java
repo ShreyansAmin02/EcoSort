@@ -1,5 +1,6 @@
 package com.example.ecosort;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -14,15 +15,12 @@ public class ReportActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setIds();
+        uploadImage = findViewById(R.id.uploadPhotoButton);
         setContentView(R.layout.report_activity);
         uploadImage.setOnClickListener(view ->{
-            //go to image
-
+            Intent intent = new Intent (ReportActivity.this, BinImageActivity.class);
+            startActivity(intent);
         });
     }
 
-    private void setIds(){
-        uploadImage = findViewById(R.id.uploadPhotoButton);
-    }
 }

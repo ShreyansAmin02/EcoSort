@@ -22,18 +22,19 @@ public class BinDetailsActivity extends AppCompatActivity {
         setIds();
         setContentView(R.layout.bin_details);
         manageRoleBasedFeatures();
+        reportBTN.setOnClickListener(view ->{
+            Intent intent = new Intent(BinDetailsActivity.this, ReportActivity.class);
+            startActivity(intent);
+        });
     }
     private void manageRoleBasedFeatures() {
+        setIds();
         if (SharedPrefManager.isAdmin()) {
             buttons.setVisibility(View.VISIBLE);
             reportBTN.setVisibility(View.GONE);
         } else {
             buttons.setVisibility(View.GONE);
             reportBTN.setVisibility(View.VISIBLE);
-            reportBTN.setOnClickListener(view ->{
-                Intent intent = new Intent(BinDetailsActivity.this, ReportActivity.class);
-                startActivity(intent);
-            });
         }
     }
 
