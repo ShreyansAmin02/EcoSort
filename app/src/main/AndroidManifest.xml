@@ -38,6 +38,9 @@
             android:name=".BinImageActivity"
             android:exported="true"/>
         <activity
+            android:name=".NavigationActivity"
+            android:exported="true"/>
+        <activity
             android:name=".MainActivity"
             android:exported="true">
 

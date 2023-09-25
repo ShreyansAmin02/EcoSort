@@ -46,12 +46,32 @@
         android:text="Bin Location: 177A Bleeker Street"
         android:layout_margin="16dp"/>
 
-    <Button
-        android:id="@+id/reportBtn"
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:id="@+id/reportNavBtns"
         android:layout_height="wrap_content"
-        android:backgroundTint="#F94141"
-        android:text="Report" />
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="16dp">
+        <Button
+            android:id="@+id/navBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#6A994E"
+            android:text="Navigate"
+            android:layout_margin="5dp">
+
+        </Button>
+        <Button
+            android:id="@+id/reportBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#F94141"
+            android:text="Report"
+            android:layout_margin="5dp">
+        </Button>
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/updelButtons"

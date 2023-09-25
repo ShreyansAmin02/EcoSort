@@ -14,7 +14,9 @@ public class BinDetailsActivity extends AppCompatActivity {
     private Button updateBTN;
     private Button deleteBTN;
     private Button reportBTN;
+    private Button navBTN;
     private LinearLayout buttons;
+    private LinearLayout buttons2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,15 +28,20 @@ public class BinDetailsActivity extends AppCompatActivity {
             Intent intent = new Intent(BinDetailsActivity.this, ReportActivity.class);
             startActivity(intent);
         });
+        navBTN.setOnClickListener(view -> {
+            Intent intent = new Intent (BinDetailsActivity.this, NavigationActivity.class);
+            startActivity(intent);
+        });
+
     }
     private void manageRoleBasedFeatures() {
         setIds();
         if (SharedPrefManager.isAdmin()) {
             buttons.setVisibility(View.VISIBLE);
-            reportBTN.setVisibility(View.GONE);
+            buttons2.setVisibility(View.GONE);
         } else {
             buttons.setVisibility(View.GONE);
-            reportBTN.setVisibility(View.VISIBLE);
+            buttons2.setVisibility(View.VISIBLE);
         }
     }
 
@@ -43,5 +50,8 @@ public class BinDetailsActivity extends AppCompatActivity {
         deleteBTN = findViewById(R.id.deleteBtn);
         buttons = findViewById(R.id.updelButtons);
         reportBTN = findViewById(R.id.reportBtn);
+        navBTN = findViewById(R.id.navBtn);
+        buttons2 = findViewById(R.id.reportNavBtns);
+
     }
 }
