@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="384dp"
+        android:layout_height="42dp"
+        android:text=" Waste Collection Scheduler"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:textSize="25dp" />
+
+    <!-- Date Picker -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="16dp">
+
+
+        <TextView
+            android:layout_width="59dp"
+            android:layout_height="wrap_content"
+            android:text="Date:"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/dateEdit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Enter date"
+            android:minHeight="48dp" />
+
+        <Button
+            android:id="@+id/datePickerButton"
+            android:layout_width="wrap_content"
+            android:layout_height="59dp"
+            android:backgroundTint="#6A994E"
+
+            android:layout_alignParentRight="true"
+            android:text="Select Date" />
+    </LinearLayout>
+
+    <!-- Time Picker -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Time:"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/timeEdit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Enter time"
+            android:minHeight="48dp" />
+
+        <Button
+            android:id="@+id/timePickerButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#6A994E"
+            android:text="Select Time" />
+    </LinearLayout>
+
+    <!-- Location EditText -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="Location:"
+        android:textSize="18sp" />
+
+    <!-- Schedule RadioGroup -->
+
+    <EditText
+        android:id="@+id/locationEditText"
+        android:layout_width="357dp"
+        android:layout_height="wrap_content"
+        android:hint="Enter location"
+        android:minHeight="48dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Schedule:"
+        android:textSize="18sp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp" />
+
+    <RadioGroup
+        android:id="@+id/scheduleRadioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="16dp">
+
+        <RadioButton
+            android:id="@+id/pickupRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pickup" />
+
+        <RadioButton
+            android:id="@+id/dropoffRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Drop-off" />
+    </RadioGroup>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Upcoming Scheduled Collections"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="8dp" />
+    <!-- Upcoming Scheduled Collections Table -->
+    <!-- Upcoming Scheduled Collections Table -->
+    <TableLayout
+        android:id="@+id/scheduleTable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+
+
+        android:stretchColumns="0,1,2">
+
+
+        <TableRow>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Date"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:layout_weight="1"
+                android:backgroundTint="#6A994E"
+                android:gravity="center"
+                android:text="Time"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:layout_weight="1"
+                android:backgroundTint="#6A994E"
+                android:gravity="center"
+                android:text="Type"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="20-09-2023"
+                android:textSize="16sp"
+                android:gravity="center" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="10:00AM"
+                android:textSize="16sp"
+                android:gravity="center" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Recycling"
+                android:textSize="16sp"
+                android:gravity="center" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="23-10-2023"
+                android:textSize="16sp"
+                android:gravity="center" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="01:00PM"
+                android:textSize="16sp"
+                android:gravity="center" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Glass"
+                android:textSize="16sp"
+                android:gravity="center" />
+        </TableRow>
+
+        <!-- Empty row for adding data dynamically -->
+        <TableRow
+            android:id="@+id/emptyRow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <!-- You can leave this row empty -->
+        </TableRow>
+    </TableLayout>
+
+
+    <!-- Submit Button -->
+    <Button
+        android:id="@+id/submitButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#6A994E"
+        android:text="Submit"/>
+</LinearLayout>
+

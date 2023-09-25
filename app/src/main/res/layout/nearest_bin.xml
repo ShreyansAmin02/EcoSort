@@ -1,0 +1,75 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/title_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Scan or search your product"
+        android:fontFamily="@font/inter_bold"
+        android:textColor="#386641"
+        android:textSize="29sp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp" />
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/products_info_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="60dp"
+        android:layout_below="@id/title_textview" >
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="40dp"
+            android:src="@drawable/bottle_water_solid"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/recycle_solid"/>
+    </LinearLayout>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/textview_category_product"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="This product goes into the recyble bin"
+        android:textSize="14sp"
+        android:layout_below="@id/products_info_1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/textview_nearest_bin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Your nearest bin"
+        android:fontFamily="@font/inter_bold"
+        android:textColor="#386641"
+        android:textSize="29sp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/textview_category_product"
+        android:layout_marginTop="60dp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textview_nearest_bin"
+        android:src="@drawable/maps_info_1"
+        android:layout_marginTop="20dp"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/login_button"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="Tap to find more options"
+        android:layout_below="@id/textview_nearest_bin"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="230dp" />
+</RelativeLayout>
