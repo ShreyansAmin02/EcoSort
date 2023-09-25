@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.ecosort.Utils.SharedPrefManager;
 
 public class ReportActivity extends AppCompatActivity {
-    private ImageButton uploadImage;
+    private Button uploadImage;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -68,25 +68,15 @@
             android:inputType="textMultiLine" />
 
         <!-- Upload Photo Button -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="upload photo"
-            android:textSize="18sp"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="8dp" />
 
-        <!-- Submit Button -->
-
-        <ImageButton
+        <Button
             android:id="@+id/uploadPhotoButton"
-            android:layout_width="100dp"
+            android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:backgroundTint="#6A994E"
             android:layout_gravity="center_horizontal"
             android:layout_marginBottom="5dp"
-            android:contentDescription="Upload Photo"
-            android:src="@drawable/camera"
+            android:text="Upload Image"
             android:scaleType="fitCenter"/>
 
         <Button
