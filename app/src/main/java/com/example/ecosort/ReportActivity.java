@@ -17,10 +17,10 @@ public class ReportActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         uploadImage = findViewById(R.id.uploadPhotoButton);
         setContentView(R.layout.report_activity);
-        uploadImage.setOnClickListener(view ->{
-            Intent intent = new Intent (ReportActivity.this, BinImageActivity.class);
-            startActivity(intent);
-        });
+//        uploadImage.setOnClickListener(view ->{
+//            Intent intent = new Intent (ReportActivity.this, BinImageActivity.class);
+//            startActivity(intent);
+//        });
     }
 
 }
