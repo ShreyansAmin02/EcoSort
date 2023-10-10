@@ -61,6 +61,8 @@ public class BinListActivity extends AppCompatActivity {
             Toast.makeText(BinListActivity.this,
                     binList.get(position).getType(), Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(BinListActivity.this, BinDetailsActivity.class);
+            Bin bin = binList.get(position);
+            intent.putExtra("binId", bin.id);
             startActivity(intent);
         });
         manageRoleBasedFeatures();

@@ -16,5 +16,7 @@ public interface BinDao {
     void delete(Bin bin);
     @Query("SELECT * FROM bins")
     LiveData<List<Bin>>getAllBins();
+    @Query("SELECT * FROM bins WHERE id = :binId")
+    LiveData<Bin>getBinId(int binId);
 
 }

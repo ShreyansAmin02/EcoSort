@@ -28,22 +28,22 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/binType"
+        android:id="@+id/tvBinType"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Bin Type: Recycle/Gneral/Glass"
+        android:text="Bin Type:"
         android:layout_margin="16dp"/>
     <TextView
-        android:id="@+id/binCurrentCapacity"
+        android:id="@+id/tvBinCurrentCapacity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Current Capacity: Empty"
+        android:text="Current Capacity:"
         android:layout_margin="16dp"/>
     <TextView
-        android:id="@+id/binLocation"
+        android:id="@+id/tvBinLocation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Bin Location: 177A Bleeker Street"
+        android:text="Bin Location:"
         android:layout_margin="16dp"/>
 
     <LinearLayout
