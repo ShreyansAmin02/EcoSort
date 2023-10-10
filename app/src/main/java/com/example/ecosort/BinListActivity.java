@@ -2,19 +2,26 @@ package com.example.ecosort;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.LiveData;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.ecosort.Utils.MyApp;
 import com.example.ecosort.Utils.SharedPrefManager;
 
 import java.util.ArrayList;
+import java.util.List;
+
+import DB.Bin;
+import DB.BinDao;
 
 public class BinListActivity extends AppCompatActivity {
     ArrayList<Bin> binList;
@@ -32,7 +39,8 @@ public class BinListActivity extends AppCompatActivity {
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        binList = generateDummyData();
+        binList = new ArrayList<>();
+        getDataFromDatabase();
 
         binAdapter = new BinAdapter(binList);
         recyclerView.setAdapter(binAdapter);
@@ -84,9 +92,12 @@ public class BinListActivity extends AppCompatActivity {
             String binCapacity = editTextBinCapacity.getText().toString();
             String binLocation = editTextBinLocation.getText().toString();
 
-            // Add the new vehicle to the list
+            // Add the new bin to the list
             Bin bin = new Bin(binType, binLocation, binCapacity);
-            binList.add(0, bin);
+            BinDao binDao = MyApp.getAppDatabase().binDao();
+            AsyncTask.execute(() ->{
+                binDao.insert(bin);
+            });
             binAdapter.notifyDataSetChanged();
         });
 
@@ -95,14 +106,20 @@ public class BinListActivity extends AppCompatActivity {
         dialog.show();
 
     }
-    private ArrayList<Bin> generateDummyData() {
-        ArrayList<Bin> binList = new ArrayList<>();
-        binList.add(new Bin ("Recycle", "Westfield Mt Gravatt", "250"));
-        binList.add(new Bin ("General", "Westfield Mt Gravatt", "250"));
-        binList.add(new Bin ("General", "Bombay Dhaba", "250"));
-        binList.add(new Bin ("Recycle", "Bombay Dhaba", "250"));
-        // Add more vehicles as needed
-        return binList;
+
+    private void getDataFromDatabase(){
+        BinDao binDao = MyApp.getAppDatabase().binDao();
+        LiveData<List<Bin>> binsLiveData = binDao.getAllBins();
+        binsLiveData.observe(this, bins -> {
+            if (bins.size() > 0) {
+                binList.clear();
+                binList.addAll(bins);
+                binAdapter.notifyDataSetChanged();
+            }
+            else{
+                Toast.makeText(this, "No bins found in database", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
     private void setIds(){
         recyclerView = findViewById(R.id.recyclerView);

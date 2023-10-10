@@ -1,6 +1,11 @@
-package com.example.ecosort;
+package DB;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
 
+@Entity(tableName = "bins")
 public class Bin {
+    @PrimaryKey(autoGenerate = true)
+    public int id;
     private String type;
     private String location;
     private String capacity;

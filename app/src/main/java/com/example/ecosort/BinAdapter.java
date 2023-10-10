@@ -10,6 +10,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
+import DB.Bin;
+
 public class BinAdapter extends RecyclerView.Adapter<BinAdapter.BinViewHolder> {
     private ArrayList<Bin> binList;
     public interface OnItemClickListener {
