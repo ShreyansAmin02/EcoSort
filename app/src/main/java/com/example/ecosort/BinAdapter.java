@@ -51,8 +51,8 @@ public class BinAdapter extends RecyclerView.Adapter<BinAdapter.BinViewHolder> {
 
         public BinViewHolder(@NonNull View itemView) {
             super(itemView);
-            binLocation = itemView.findViewById(R.id.editTextBinLocation);
-            binType = itemView.findViewById(R.id.editTextBinType);
+            binLocation = itemView.findViewById(R.id.TextBinLocation);
+            binType = itemView.findViewById(R.id.TextBinType);
             itemView.setOnClickListener(v -> {
                 if (mListener != null) {
                     int position = getAdapterPosition();

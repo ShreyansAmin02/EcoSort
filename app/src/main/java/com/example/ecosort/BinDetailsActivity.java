@@ -1,11 +1,17 @@
 package com.example.ecosort;
 
+import android.content.AsyncQueryHandler;
+import android.os.AsyncTask;
 import android.os.Bundle;
+
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.text.AlteredCharSequence;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -27,7 +33,7 @@ public class BinDetailsActivity extends AppCompatActivity {
     private TextView binCapacity;
     private TextView binLocation;
     BinDao binDao;
-
+    Bin bin;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,18 +50,72 @@ public class BinDetailsActivity extends AppCompatActivity {
             Intent intent = new Intent (BinDetailsActivity.this, NavigationActivity.class);
             startActivity(intent);
         });
+
         if (getIntent().getIntExtra("binId", -1) !=1 ){
             binId = getIntent().getIntExtra("binId", -1);
-            binDao.getBinId(binId).observe(this, bin ->{
-                binType.setText("Bin Type: "+ bin.getType());
-                binCapacity.setText("Current Capacity: "+ bin.getCapacity());
-                binLocation.setText("Bin Location: "+ bin.getLocation());
+            binDao.getBinId(binId).observe(this, dbBin ->{
+                binType.setText("Bin Type: "+ dbBin.getType());
+                binCapacity.setText("Current Capacity: "+ dbBin.getCapacity());
+                binLocation.setText("Bin Location: "+ dbBin.getLocation());
             });
         }
         else{
             Toast.makeText(this, "No Bin ID Found", Toast.LENGTH_SHORT).show();
         }
+        updateBTN.setOnClickListener(view -> {
+            Toast.makeText(this, "Update button pressed", Toast.LENGTH_SHORT).show();
+            if (bin !=null ) {
+                updateTheBin();
+            }
+        });
+        deleteBTN.setOnClickListener(view -> {
+            if (bin !=null){
+                deleteTheBin();
+            }
 
+        });
+
+    }
+    private void updateTheBin(){
+        View dialogView = getLayoutInflater().inflate(R.layout.add_bin, null);
+        EditText editTextBinType = dialogView.findViewById(R.id.editTextBinType);
+        EditText editTextBinCapacity = dialogView.findViewById(R.id.editTextBinCapacity);
+        EditText editTextBinLocation = dialogView.findViewById(R.id.editTextBinLocation);
+
+        editTextBinType.setText(bin.getType());
+        editTextBinCapacity.setText(bin.getCapacity());
+        editTextBinLocation.setText(bin.getLocation());
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setView(dialogView);
+
+        builder.setPositiveButton("Update", (dialog, which) -> {
+            String binType = editTextBinType.getText().toString();
+            String binCapacity = editTextBinCapacity.getText().toString();
+            String binLocation = editTextBinLocation.getText().toString();
+
+            //update the parameters
+            bin.setType(binType);
+            bin.setCapacity(binCapacity);
+            bin.setLocation(binLocation);
+
+            AsyncTask.execute(()->{
+                binDao.update(bin);
+            });
+        });
+
+        builder.setNegativeButton("Cancel", (dialog, which) -> {
+            dialog.cancel();
+        });
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
+    private void deleteTheBin(){
+        AsyncTask.execute(()->{
+            binDao.delete(bin);
+            finish();
+        });
     }
     private void manageRoleBasedFeatures() {
         setIds();
@@ -78,6 +138,5 @@ public class BinDetailsActivity extends AppCompatActivity {
         binType = findViewById(R.id.tvBinType);
         binCapacity = findViewById(R.id.tvBinCurrentCapacity);
         binLocation = findViewById(R.id.tvBinLocation);
-
     }
 }
