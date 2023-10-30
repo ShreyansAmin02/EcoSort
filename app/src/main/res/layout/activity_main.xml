@@ -64,6 +64,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginStart="8dp"
         android:paddingHorizontal="48dp"
+        android:fontFamily="@font/inter_bold"
         android:text="Login"
         android:backgroundTint="#6A994E"/>
     <TextView

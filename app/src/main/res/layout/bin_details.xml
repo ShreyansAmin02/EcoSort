@@ -21,6 +21,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/inter_bold"
             android:text="Details"
             android:textAlignment="center"
             android:textStyle="bold"
@@ -29,18 +30,21 @@
 
     <TextView
         android:id="@+id/tvBinType"
+        android:fontFamily="@font/inter_regular"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Bin Type:"
         android:layout_margin="16dp"/>
     <TextView
         android:id="@+id/tvBinCurrentCapacity"
+        android:fontFamily="@font/inter_regular"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Current Capacity:"
         android:layout_margin="16dp"/>
     <TextView
         android:id="@+id/tvBinLocation"
+        android:fontFamily="@font/inter_regular"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Bin Location:"
@@ -54,6 +58,7 @@
         android:layout_margin="16dp">
         <Button
             android:id="@+id/navBtn"
+            android:fontFamily="@font/inter_bold"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -64,6 +69,7 @@
         </Button>
         <Button
             android:id="@+id/reportBtn"
+            android:fontFamily="@font/inter_bold"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -81,6 +87,7 @@
         android:layout_margin="16dp">
         <Button
             android:id="@+id/updateBtn"
+            android:fontFamily="@font/inter_bold"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -91,6 +98,7 @@
         </Button>
         <Button
             android:id="@+id/deleteBtn"
+            android:fontFamily="@font/inter_bold"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"

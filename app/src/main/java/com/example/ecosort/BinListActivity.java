@@ -10,6 +10,9 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -80,6 +83,11 @@ public class BinListActivity extends AppCompatActivity {
 
 
     private void manageNewBinFunctionality() {
+        String[] binTypes = {"General", "Recycle", "Glass", "Green Waste"};
+
+        AutoCompleteTextView autoCompleteTextView;
+
+        ArrayAdapter<String> adapterItems;
 
         AlertDialog.Builder builder = new AlertDialog.Builder(BinListActivity.this);
         View dialogView = getLayoutInflater().inflate(R.layout.add_bin, null);
@@ -88,8 +96,19 @@ public class BinListActivity extends AppCompatActivity {
         EditText editTextBinType = dialogView.findViewById(R.id.editTextBinType);
         EditText editTextBinCapacity = dialogView.findViewById(R.id.editTextBinCapacity);
         EditText editTextBinLocation = dialogView.findViewById(R.id.editTextBinLocation);
+        autoCompleteTextView = dialogView.findViewById(R.id.binTypeDrop);
+        adapterItems = new ArrayAdapter<String>(this, R.layout.list_item, binTypes);
+        autoCompleteTextView.setAdapter(adapterItems);
+
 
         builder.setPositiveButton("Add", (dialog, which) -> {
+//            This is so that we can use a drop down menu instead, but it's not working yet:
+//            autoCompleteTextView.setOnClickListener(new AdapterView.OnItemClickListener(){
+//                @Override
+//                public void onItemClickListener(AdapterView<?> adapterView, View view, int position, long id) {
+//                    String binType = adapterView.getItemAtPosition(position).toString();
+//                }
+//            });
             String binType = editTextBinType.getText().toString();
             String binCapacity = editTextBinCapacity.getText().toString();
             String binLocation = editTextBinLocation.getText().toString();

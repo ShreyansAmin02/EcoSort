@@ -12,14 +12,22 @@
         android:background="#D9D9D9">
         <TextView
             android:layout_width="match_parent"
+            android:fontFamily="@font/inter_bold"
             android:layout_height="wrap_content"
             android:text="NEW BIN"
             android:textAlignment="center"
-            android:textStyle="bold"
             android:textColor="#3A3A39" />
     </LinearLayout>
+    <AutoCompleteTextView
+        android:id="@+id/binTypeDrop"
+        android:fontFamily="@font/inter_regular"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Select Bin Type"
+        android:textAlignment="center"/>
     <EditText
         android:id="@+id/editTextBinType"
+        android:fontFamily="@font/inter_regular"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Bin Type"
@@ -27,12 +35,14 @@
 
     <EditText
         android:id="@+id/editTextBinCapacity"
+        android:fontFamily="@font/inter_regular"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Bin Capacity"
         android:textAlignment="center"/>
     <EditText
         android:id="@+id/editTextBinLocation"
+        android:fontFamily="@font/inter_regular"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Bin Location"
