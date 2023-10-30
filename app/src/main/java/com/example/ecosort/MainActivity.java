@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.ecosort.Utils.SharedPrefManager;
@@ -14,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
 
     private EditText emailEditText, passwordEditText;
     private Button loginButton;
+    TextView signUpPage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,12 +47,18 @@ public class MainActivity extends AppCompatActivity {
                 emailEditText.setError("Invalid email");
                 passwordEditText.setError("Invalid password");            }
         });
+        signUpPage.setOnClickListener(view -> {
+            Intent intent = new Intent(MainActivity.this, SignUpActivity.class);
+            startActivity(intent);
+        });
     }
 
     private void setViewIds() {
         emailEditText = findViewById(R.id.emailEditText);
         passwordEditText = findViewById(R.id.passwordEditText);
         loginButton = findViewById(R.id.loginButton);
+        signUpPage = findViewById(R.id.signUp);
+
     }
 
     private boolean isValidCredentials(String email, String password) {
