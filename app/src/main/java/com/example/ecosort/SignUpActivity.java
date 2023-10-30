@@ -33,7 +33,7 @@ public class SignUpActivity extends AppCompatActivity {
             String phoneNumber = phoneEditText.getText().toString();
             String confirm = confirmPassword.getText().toString();
             // Perform login authentication logic here
-            if (isValidCredentials(name, email, password, phoneNumber)) {
+            if (isValidCredentials(name, email, password, phoneNumber, confirm)) {
                 // Successful signed up, navigate to next activity
                 SharedPrefManager.setLoginState(true);
                 Toast.makeText(SignUpActivity.this, "Signup successful",
@@ -108,11 +108,11 @@ public class SignUpActivity extends AppCompatActivity {
         return (phoneNumber.startsWith("+61") && phoneNumber.length() == 12) || (phoneNumber.startsWith("04") && phoneNumber.length()==10);
     }
 
-    private boolean isValidCredentials(String name, String email, String password, String phoneNumber)
+    private boolean isValidCredentials(String name, String email, String password, String phoneNumber, String confirm)
     {
         // Perform validation logic here
         // Return true if credentials are valid, false otherwise
-        return isValidEmail(email) && (password.length() >=5) && isValidPhoneNumber(phoneNumber) && (name.length() >=3) && (!name.matches(pattern));
+        return isValidEmail(email) && (password.length() >=5) && isValidPhoneNumber(phoneNumber) && (name.length() >=3) && (!name.matches(pattern)) && (password.matches(confirm));
 
     }
 }
