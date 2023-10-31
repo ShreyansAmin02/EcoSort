@@ -27,6 +27,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textEmailAddress"
+            android:fontFamily="@font/inter_regular"
             android:hint="Search Products"/>
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -123,5 +124,6 @@
         android:layout_below="@id/products_info_3"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="32dp"
+        android:fontFamily="@font/inter_regular"
         android:backgroundTint="#6A994E"/>
 </RelativeLayout>

@@ -28,6 +28,7 @@
                 android:id="@+id/TextBinLocation"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_extra_bold"
                 android:text="Bin Location"
                 android:textSize="18sp"
                 android:textStyle="bold"
@@ -39,6 +40,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Bin Type"
+                android:fontFamily="@font/inter_regular"
                 android:textColor="#3A3A39"
                 android:textSize="14sp"
                 android:layout_marginTop="4dp"/>
