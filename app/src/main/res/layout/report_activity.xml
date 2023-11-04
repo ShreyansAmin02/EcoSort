@@ -13,7 +13,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Report Problem"
-            android:fontFamily="@font/inter_extra_bold"
             android:textSize="24sp"
             android:textStyle="bold"
             android:layout_gravity="center_horizontal"
@@ -24,7 +23,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Type of Problem"
-            android:fontFamily="@font/inter_bold"
             android:textSize="18sp"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="8dp" />
@@ -33,7 +31,6 @@
             android:id="@+id/problemTypeEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/inter_regular"
             android:hint="Enter Problem" />
 
         <!-- Location -->
@@ -41,7 +38,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Location"
-            android:fontFamily="@font/inter_bold"
             android:textSize="18sp"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="8dp" />
@@ -50,7 +46,6 @@
             android:id="@+id/locationEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/inter_regular"
             android:hint="Enter Location" />
 
         <!-- In Detail Description -->
@@ -58,7 +53,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="In Detail Description"
-            android:fontFamily="@font/inter_bold"
             android:textSize="18sp"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="8dp" />
@@ -68,31 +62,41 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Enter Text"
-            android:fontFamily="@font/inter_regular"
             android:gravity="top"
             android:layout_marginBottom="16dp"
             android:minLines="5"
             android:inputType="textMultiLine" />
 
         <!-- Upload Photo Button -->
-
-        <Button
-            android:id="@+id/uploadPhotoButton"
+        <TextView
+            android:id="@+id/PhotoButton"
             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="upload photo"
+            android:textSize="18sp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Submit Button -->
+
+        <ImageButton
+            android:id="@+id/uploadPhotoButton"
+            android:layout_width="100dp"
             android:layout_height="50dp"
-            android:backgroundTint="#6A994E"
+            android:backgroundTint="@color/light_green"
             android:layout_gravity="center_horizontal"
             android:layout_marginBottom="5dp"
-            android:text="Upload Image"
-            android:fontFamily="@font/inter_bold"
+            android:contentDescription="Upload Photo"
+            android:src="@drawable/camera"
             android:scaleType="fitCenter"/>
 
         <Button
             android:id="@+id/submitButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="#6A994E"
-            android:fontFamily="@font/inter_bold"
+            android:backgroundTint="@color/light_green"
+            android:textColor="@color/black"
+
             android:text="Submit"
             android:layout_marginTop="16dp" />
 

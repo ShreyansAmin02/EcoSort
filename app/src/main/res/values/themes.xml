@@ -2,8 +2,14 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.EcoSort" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">@color/light_green</item>
+        <item name="colorSecondaryContainer">@color/dark_green</item>
+
     </style>
 
-    <style name="Theme.EcoSort" parent="Base.Theme.EcoSort" />
+    <style name="Theme.EcoSort" parent="Base.Theme.EcoSort" >
+        <item name="android:activityOpenEnterAnimation">@anim/slide_right</item>
+        <item name="android:activityOpenExitAnimation">@anim/slider_left</item>
+    </style>
+
 </resources>

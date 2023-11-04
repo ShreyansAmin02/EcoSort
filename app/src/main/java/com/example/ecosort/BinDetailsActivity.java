@@ -63,7 +63,7 @@ public class BinDetailsActivity extends AppCompatActivity {
             Toast.makeText(this, "No Bin ID Found", Toast.LENGTH_SHORT).show();
         }
         updateBTN.setOnClickListener(view -> {
-            Toast.makeText(this, "Update button pressed", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(getApplicationContext(), ReportActivity.class));
             if (bin !=null ) {
                 updateTheBin();
             }

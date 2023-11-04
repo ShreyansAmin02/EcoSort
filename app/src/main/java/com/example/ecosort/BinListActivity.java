@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.graphics.Camera;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
@@ -19,6 +20,7 @@ import android.widget.Toast;
 
 import com.example.ecosort.Utils.MyApp;
 import com.example.ecosort.Utils.SharedPrefManager;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,6 +41,28 @@ public class BinListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.bin_list);
         setIds();
+
+        // Block code for bottom navigation
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
+        bottomNavigationView.setSelectedItemId(R.id.bottom_home);
+
+        bottomNavigationView.setOnItemSelectedListener(item -> {
+            if (item.getItemId() == R.id.bottom_home) {
+                return true;
+            } else if (item.getItemId() == R.id.bottom_scan) {
+                startActivity(new Intent(getApplicationContext(), CameraScanActivity.class));
+                overridePendingTransition(R.anim.slide_right, R.anim.slider_left);
+                finish();
+                return true;
+            } else if (item.getItemId() == R.id.bottom_maps) {
+                startActivity(new Intent(getApplicationContext(), NavigationActivity.class));
+                overridePendingTransition(R.anim.slide_right, R.anim.slider_left);
+                finish();
+                return true;
+            }
+            return false;
+        });
+
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
@@ -148,4 +172,6 @@ public class BinListActivity extends AppCompatActivity {
         searchBtn = findViewById(R.id.searchButton);
         scheduleBtn = findViewById(R.id.scheduleButton);
     }
+
+
 }

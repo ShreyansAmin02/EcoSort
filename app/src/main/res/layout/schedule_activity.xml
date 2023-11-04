@@ -3,14 +3,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="16dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <TextView
         android:layout_width="384dp"
         android:layout_height="42dp"
         android:text=" Waste Collection Scheduler"
-        android:fontFamily="@font/inter_extra_bold"
         android:textStyle="bold"
+        android:textColor="@color/black"
         android:textAlignment="center"
         android:textSize="25dp" />
 
@@ -27,56 +28,53 @@
             android:layout_width="59dp"
             android:layout_height="wrap_content"
             android:text="Date:"
-            android:fontFamily="@font/inter_regular"
             android:textSize="18sp" />
 
         <EditText
-            android:id="@+id/dateEdit"
-            android:layout_width="wrap_content"
+            android:id="@+id/EditText1"
+            android:layout_width="214dp"
             android:layout_height="wrap_content"
             android:hint="Enter date"
-            android:fontFamily="@font/inter_regular"
             android:minHeight="48dp" />
 
         <Button
             android:id="@+id/datePickerButton"
-            android:layout_width="wrap_content"
+            android:layout_width="102dp"
             android:layout_height="59dp"
-            android:backgroundTint="#6A994E"
-            android:fontFamily="@font/inter_extra_bold"
+            android:backgroundTint="@color/light_green"
+            android:textColor="@color/black"
+
             android:layout_alignParentRight="true"
             android:text="Select Date" />
     </LinearLayout>
 
     <!-- Time Picker -->
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="383dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:gravity="center_vertical"
         android:orientation="horizontal">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="61dp"
             android:layout_height="wrap_content"
             android:text="Time:"
-            android:fontFamily="@font/inter_regular"
             android:textSize="18sp" />
 
         <EditText
-            android:id="@+id/timeEdit"
-            android:layout_width="wrap_content"
+            android:id="@+id/EditText2"
+            android:layout_width="214dp"
             android:layout_height="wrap_content"
             android:hint="Enter time"
-            android:fontFamily="@font/inter_regular"
             android:minHeight="48dp" />
 
         <Button
             android:id="@+id/timePickerButton"
-            android:layout_width="wrap_content"
+            android:layout_width="102dp"
             android:layout_height="wrap_content"
-            android:backgroundTint="#6A994E"
-            android:fontFamily="@font/inter_extra_bold"
+            android:backgroundTint="@color/light_green"
+            android:textColor="@color/black"
             android:text="Select Time" />
     </LinearLayout>
 
@@ -86,7 +84,6 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:text="Location:"
-        android:fontFamily="@font/inter_regular"
         android:textSize="18sp" />
 
     <!-- Schedule RadioGroup -->
@@ -96,13 +93,11 @@
         android:layout_width="357dp"
         android:layout_height="wrap_content"
         android:hint="Enter location"
-        android:fontFamily="@font/inter_regular"
         android:minHeight="48dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/inter_extra_bold"
         android:text="Schedule:"
         android:textSize="18sp"
         android:layout_marginTop="16dp"
@@ -119,21 +114,18 @@
             android:id="@+id/pickupRadioButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/inter_regular"
             android:text="Pickup" />
 
         <RadioButton
             android:id="@+id/dropoffRadioButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/inter_regular"
             android:text="Drop-off" />
     </RadioGroup>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Upcoming Scheduled Collections"
-        android:fontFamily="@font/inter_extra_bold"
         android:textSize="20sp"
         android:textStyle="bold"
         android:layout_marginTop="16dp"
@@ -152,34 +144,33 @@
 
 
         <TableRow>
+
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="44dp"
                 android:layout_weight="1"
+                android:background="@color/light_green"
                 android:gravity="center"
                 android:text="Date"
                 android:textColor="@color/black"
-                android:fontFamily="@font/inter_regular"
                 android:textSize="16sp" />
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="44dp"
                 android:layout_weight="1"
-                android:backgroundTint="#6A994E"
+                android:background="@color/light_green"
                 android:gravity="center"
                 android:text="Time"
                 android:textColor="@color/black"
-                android:fontFamily="@font/inter_regular"
                 android:textSize="16sp" />
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="44dp"
                 android:layout_weight="1"
-                android:backgroundTint="#6A994E"
+                android:background="@color/light_green"
                 android:gravity="center"
-                android:fontFamily="@font/inter_regular"
                 android:text="Type"
                 android:textColor="@color/black"
                 android:textSize="16sp" />
@@ -190,7 +181,6 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="20-09-2023"
-                android:fontFamily="@font/inter_regular"
                 android:textSize="16sp"
                 android:gravity="center" />
 
@@ -199,7 +189,6 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="10:00AM"
-                android:fontFamily="@font/inter_regular"
                 android:textSize="16sp"
                 android:gravity="center" />
 
@@ -208,7 +197,6 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Recycling"
-                android:fontFamily="@font/inter_regular"
                 android:textSize="16sp"
                 android:gravity="center" />
         </TableRow>
@@ -218,7 +206,6 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="23-10-2023"
-                android:fontFamily="@font/inter_regular"
                 android:textSize="16sp"
                 android:gravity="center" />
 
@@ -227,7 +214,6 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="01:00PM"
-                android:fontFamily="@font/inter_regular"
                 android:textSize="16sp"
                 android:gravity="center" />
 
@@ -237,7 +223,6 @@
                 android:layout_weight="1"
                 android:text="Glass"
                 android:textSize="16sp"
-                android:fontFamily="@font/inter_regular"
                 android:gravity="center" />
         </TableRow>
 
@@ -258,8 +243,25 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="16dp"
-        android:backgroundTint="#6A994E"
-        android:fontFamily="@font/inter_extra_bold"
-        android:text="Submit"/>
+        android:backgroundTint="@color/light_green"
+        android:text="Submit"
+        android:textColor="@color/black" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/bottomNavigationView"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/bottom_shape"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="30dp"
+        android:layout_marginTop="30dp"
+        android:elevation="2dp"
+        app:menu="@menu/bottom_navigation"
+        app:itemIconSize="30dp"
+        app:itemIconTint="@drawable/item_selector"
+        app:itemRippleColor="@android:color/transparent"
+        app:labelVisibilityMode="unlabeled"/>
 </LinearLayout>
 
